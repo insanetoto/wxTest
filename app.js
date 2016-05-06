@@ -1,7 +1,15 @@
 var debug = require('debug')('wxTest');
 var koa = require('koa');
+var sha1 = require('sha1')
 //配置文件
 var config = require('./config/config');
+var wxconfig = {
+    wechat:{
+	appID:'wx752f2bc195410378',
+	appSecret:'f1c7e28b84827391d60ec2aa0b5c2f55',
+	token:'mydearhuangwen' 
+    }
+}
 
 var app = koa();
 app.use(function *(next){
@@ -9,60 +17,22 @@ app.use(function *(next){
     if(!this.config){
         this.config = config;
     }
+    var token = wxconfig.wechat.token
+    var signature = this.query.signature
+    var nonce = this.query.nonce
+    var timestamp = this.query.timestamp
+    var echostr = this.query.echostr
+    var str = [token , timestamp, nonce].sort().join('')
+    var sha = sha1(str)
+    if (sha === signature){
+	this.body = echostr + ''
+	console.log(echostr)
+    }
+    else{
+	this.body = 'wrong'
+    }
     yield next;
 });
-
-//log记录
-var Logger = require('mini-logger');
-var logger = Logger({
-    dir: config.logDir,
-    format: 'YYYY-MM-DD-[{category}][.log]'
-});
-
-//router use : this.logger.error(new Error(''))
-app.context.logger = logger;
-
-var onerror = require('koa-onerror');
-onerror(app);
-
-//xtemplate对koa的适配
-var xtplApp = require('xtpl/lib/koa');
-//xtemplate模板渲染
-xtplApp(app,{
-    //配置模板目录
-    views: config.viewDir
-});
-
-
-
-
-var session = require('koa-session');
-app.use(session(app));
-
-
-//post body 解析
-var bodyParser = require('koa-bodyparser');
-app.use(bodyParser());
-//数据校验
-var validator = require('koa-validator');
-app.use(validator());
-
-//静态文件cache
-var staticCache = require('koa-static-cache');
-var staticDir = config.staticDir;
-app.use(staticCache(staticDir+'/js'));
-app.use(staticCache(staticDir+'/css'));
-
-//路由
-var router = require('koa-router');
-app.use(router(app));
-
-//应用路由
-var appRouter = require('./router/index');
-appRouter(app);
-
 app.listen(config.port);
 console.log('listening on port %s',config.port);
-
 module.exports = app;
-
