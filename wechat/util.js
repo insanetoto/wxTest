@@ -30,11 +30,11 @@ function formatMessage(result){
 					message[key] = formatMessage(val)
 				}
 				else{
-					message[key] === (val ||'').trim()
+					message[key] = (val ||'').trim()
 				}
 			}
 			else{
-				message=[]
+				message[key]=[]
 				for (var j=0 ;k=item.length;j++){
 					message[key].push(formatMessage(item[j]))
 				}
