@@ -11,11 +11,11 @@ exports.readFileAsync = function(fpath,encoding){
 	})
 }	
 
-exports.writeFileAsync = function(fpath,encoding){
+exports.writeFileAsync = function(fpath,content){
 	return new Promise(function(resolve,reject){
-		fs.writeFile(fpath,content,encoding, function(err){
+		fs.writeFile(fpath,content, function(err){
 			if(err) reject(err)
-			else resolve(content)
+			else resolve()
 		})
 	})
 }
