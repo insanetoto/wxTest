@@ -35,7 +35,7 @@ function formatMessage(result){
 			}
 			else{
 				message=[]
-				for (var j=0 ,k=item.length,j++){
+				for (var j=0 ;k=item.length;j++){
 					message[key].push(formatMessage(item[j]))
 				}
 			}
