@@ -4,7 +4,7 @@ var getRawBody = require('raw-body')
 var util = require('./util')
 
 module.exports = function(opts){
-    var wechat = new Wechat(opts)
+    //var wechat = new Wechat(opts)
     var that = this
     return  function *(next){        
         var token = opts.token
@@ -46,11 +46,11 @@ module.exports = function(opts){
                     that.status = 200
                     that.type = 'application/xml'
                     that.body =  '<xml>'+
-                                 '<ToUserName><![CDATA['+message.ToUserName+']]></ToUserName>'+
-                                 '<FromUserName><![CDATA['+ message.FromUserName+']]></FromUserName>'+
+                                 '<ToUserName><![CDATA['+message.FromUserName+']]></ToUserName>'+
+                                 '<FromUserName><![CDATA['+ message.ToUserName+']]></FromUserName>'+
                                  '<CreateTime>'+ now +'</CreateTime>'+
                                  '<MsgType><![CDATA[text]]></MsgType>'+
-                                 '<Content><![CDATA[Hello]]></Content>'+
+                                 '<Content><![CDATA[你好]]></Content>'+
                                  '</xml>'
                     return
                 }

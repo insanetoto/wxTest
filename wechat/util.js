@@ -19,11 +19,11 @@ function formatMessage(result){
 			var item = result[keys[i]]
 			var key = kes[i]
 
-			if (!(item instanceof Array)|| item.length===0){
+			if (!(item instanceof Array)|| item.length === 0){
 				continue
 			}
 
-			if(item.length===1){
+			if(item.length === 1){
 				var val = item[0]
 
 				if (typeof val === 'object' ){
