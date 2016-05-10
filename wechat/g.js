@@ -79,7 +79,7 @@ module.exports = function(opts){
         var signature = this.query.signature
         var nonce = this.query.nonce
         var timestamp = this.query.timestamp;
-        var echostr = this.query.
+        var echostr = this.query.echostr
         var str = [token,timestamp,nonce].sort().join('')
         var sha = sha1(str)
         if(sha === signature){
