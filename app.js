@@ -13,7 +13,7 @@ var wxconfig = {
 }
 
 var app = koa();
-app.use(wechat(weconfig.wechat))
+app.use(wechat(wxconfig.wechat))
 app.listen(config.port);
 console.log('listening on port %s',config.port);
 module.exports = app;
