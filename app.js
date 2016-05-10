@@ -10,7 +10,7 @@ var config = require('./config/config');
 
 var wxconfig = {
     wechat:{
-    	appID:'wx752f2bc195410378',
+    	appId:'wx752f2bc195410378',
     	appSecret:'f1c7e28b84827391d60ec2aa0b5c2f55',
     	token:'mydearhuangwen' ,
         getAccessToken:function(){
