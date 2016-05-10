@@ -1,5 +1,3 @@
-use 'strict'
-
 var sha1 = require('sha1')
 //配置文件
 var wxconfig = {
