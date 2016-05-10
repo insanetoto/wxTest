@@ -12,7 +12,7 @@ var wxconfig = {
     wechat:{
     	appID:'wx752f2bc195410378',
     	appSecret:'f1c7e28b84827391d60ec2aa0b5c2f55',
-    	token:'mydearhuangwen' 
+    	token:'mydearhuangwen' ,
         getAccessToken:function(){
                 return util.readFileAsync(wechat_file)
             },
