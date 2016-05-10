@@ -1,9 +1,10 @@
 var sha1 = require('sha1')
 var Wechat = require('./wechat')
 var getRawBody = require('raw-body')
+var util = require('./util')
 
 module.exports = function(opts){
-    var wechat = new Wechat(opts)
+    //var wechat = new Wechat(opts)
     return  function *(next){        
         var token = opts.token
         var signature = this.query.signature
@@ -31,8 +32,9 @@ module.exports = function(opts){
                 encoding: this.charset
 
             })
+            var content = yield util.parseXMLAsync(data)
+            console.log(content)
 
-            console.log(data.toString())
         }
         
     }
