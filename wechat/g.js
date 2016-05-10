@@ -1,5 +1,5 @@
 var sha1 = require('sha1')
-var Wechat = require('./wechat/wechat')
+var Wechat = require('./wechat')
 var getRawBody = require('raw-body')
 
 module.exports = function(opts){
