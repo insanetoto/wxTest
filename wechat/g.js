@@ -58,13 +58,12 @@ Wechat.prototype.updateAccessToken = function(){
    var appSecret = this.appSecret
 
    var url = api.accessToken +'&appid='+appId+'&appsecret='+appSecret
-   console.log(url)
 
    return new Promise(function(resolve,reject){
     request({url: url,json:true}).then(function(response){
-        var data = response[1]
+        var data = response.body
         var now = (new Date().getTime())
-        var expires_in = now + (data.expires_in-20) *1000
+        var expires_in = now + (data.expires_in - 20) *1000
 
         data.expires_in = expires_in
         resolve(data)
