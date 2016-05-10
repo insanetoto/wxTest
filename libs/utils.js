@@ -2,7 +2,7 @@
 var fs = require('fs')
 var Promise = require('bluebird')
 
-export.readFileAsync = function(fpath,encoding){
+exports.readFileAsync = function(fpath,encoding){
 	return new Promise(function(resolve,reject){
 		fs.readFile(fpath,encoding, function(err,content){
 			if(err) reject(err)
@@ -11,7 +11,7 @@ export.readFileAsync = function(fpath,encoding){
 	})
 }	
 
-export.writeFileAsync = function(fpath,encoding){
+exports. = function(fpath,encoding){
 	return new Promise(function(resolve,reject){
 		fs.writeFile(fpath,content,encoding, function(err){
 			if(err) reject(err)
