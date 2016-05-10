@@ -1,5 +1,5 @@
 var sha1 = require('sha1')
-var Promise require('bluebird')
+var Promise = require('bluebird')
 var request = Promise.promisify(require('request'))
 var prefix = 'https://api.weixin.qq.com/cgi-bin/'
 
