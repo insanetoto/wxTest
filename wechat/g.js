@@ -1,5 +1,5 @@
 var sha1 = require('sha1')
-var Wechat = require('./wechat')
+var Wechat = require('./Wechat')
 var getRawBody = require('raw-body')
 
 module.exports = function(opts){
@@ -28,7 +28,7 @@ module.exports = function(opts){
             var data = yield getRawBody(this.req,{
                 length:this.length,
                 limit:'1mb',
-                encoding:this.charset
+                encoding: this.charset
 
             })
 
