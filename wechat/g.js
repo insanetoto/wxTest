@@ -41,7 +41,7 @@ module.exports = function(opts){
                 if ( message.Event === 'subscribe'){
 
                     var now = new Date().getTime()
-                    that.status = 200
+                    //that.status = 200
                     that.type = 'application/xml'
                     that.body =  '<xml>'+
                                  '<ToUserName><![CDATA['+message.ToUserName+']]></ToUserName>'+
