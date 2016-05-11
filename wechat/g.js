@@ -36,14 +36,14 @@ module.exports = function(opts){
             })
             var content = yield util.parseXMLAsync(data)
             var message = util.formatMessage(content.xml)
-            console.log(that.toString())
+
             if(message.MsgType === 'event'){
                 if ( message.Event === 'subscribe'){
 
                     var now = new Date().getTime()
-                    that.status = 200
-                    that.type = 'application/xml'
-                    that.body =  '<xml>'+
+                    this.status = 200
+                    this.type = 'application/xml'
+                    this.body =  '<xml>'+
                                  '<ToUserName><![CDATA['+message.ToUserName+']]></ToUserName>'+
                                  '<FromUserName><![CDATA['+ message.FromUserName+']]></FromUserName>'+
                                  '<CreateTime>'+ now +'</CreateTime>'+
