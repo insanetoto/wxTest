@@ -39,7 +39,7 @@ module.exports = function(opts){
 
             if(message.MsgType === 'event'){
                 if ( message.Event === 'subscribe'){
-                    console.log('here')
+
                     var now = new Date().getTime()
 
                     that.status = 200
@@ -51,6 +51,7 @@ module.exports = function(opts){
                                  '<MsgType><![CDATA[text]]></MsgType>'+
                                  '<Content><![CDATA[你好]]></Content>'+
                                  '</xml>'
+                    console.log(that.body)
                     return
                 }
             }
