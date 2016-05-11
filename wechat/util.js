@@ -13,12 +13,12 @@ exports.parseXMLAsync = function(xml){
 
 function formatMessage(result){
 	var message = {}
-	console.log("here")
+	
 	if ( typeof result === 'object' ) {
 		var keys = Object.keys(result)
 		for (var i=0;i< keys.length;i++){
 			var item = result[keys[i]]
-			var key = kes[i]
+			var key = keys[i]
 
 			if (!(item instanceof Array)|| item.length === 0){
 				continue
