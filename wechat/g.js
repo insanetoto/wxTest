@@ -1,3 +1,4 @@
+'use strict'
 var sha1 = require('sha1')
 var Wechat = require('./wechat')
 var getRawBody = require('raw-body')
@@ -35,23 +36,20 @@ module.exports = function(opts){
             })
             var content = yield util.parseXMLAsync(data)
             var message = util.formatMessage(content.xml)
-            console.log(message)
 
             if(message.MsgType === 'event'){
                 if ( message.Event === 'subscribe'){
 
                     var now = new Date().getTime()
-
                     that.status = 200
                     that.type = 'application/xml'
                     that.body =  '<xml>'+
-                                 '<ToUserName><![CDATA['+message.FromUserName+']]></ToUserName>'+
-                                 '<FromUserName><![CDATA['+ message.ToUserName+']]></FromUserName>'+
+                                 '<ToUserName><![CDATA['+message.ToUserName+']]></ToUserName>'+
+                                 '<FromUserName><![CDATA['+ message.FromUserName+']]></FromUserName>'+
                                  '<CreateTime>'+ now +'</CreateTime>'+
                                  '<MsgType><![CDATA[text]]></MsgType>'+
                                  '<Content><![CDATA[你好]]></Content>'+
                                  '</xml>'
-                    console.log(that.body)
                     return
                 }
             }

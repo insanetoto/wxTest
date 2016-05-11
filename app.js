@@ -1,4 +1,4 @@
-var debug = require('debug')('wxTest');
+'use strict'
 var koa = require('koa');
 var sha1 = require('sha1')
 var path = require('path')
