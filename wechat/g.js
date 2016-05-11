@@ -50,6 +50,7 @@ module.exports = function(opts){
                                  '<MsgType><![CDATA[text]]></MsgType>'+
                                  '<Content><![CDATA[你好]]></Content>'+
                                  '</xml>'
+                    console.log(this.body)
                     return
                 }
             }
