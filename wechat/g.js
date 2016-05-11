@@ -34,13 +34,12 @@ module.exports = function(opts){
 
             })
             var content = yield util.parseXMLAsync(data)
-            console.log(content)
-
             var message = util.formatMessage(content.xml)
             console.log(message)
 
             if(message.MsgType === 'event'){
                 if ( message.Event === 'subscribe'){
+                    console.log('here')
                     var now = new Date().getTime()
 
                     that.status = 200
