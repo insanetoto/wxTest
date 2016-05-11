@@ -46,11 +46,4 @@ function formatMessage(result){
 
 }
 
-exports.formatMessage = function(xml){
-	return new Promise(function(resolve ,reject){
-		xml2js.parseString(xml,{ trim : false },function(err,content){
-			if(err) reject (err)
-			else resolve(content)
-		})
-	})
-}
+exports.formatMessage = formatMessage
