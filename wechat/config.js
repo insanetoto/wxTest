@@ -19,4 +19,4 @@ var wxconfig = {
         }
 }
 
-module.exports = config
+module.exports = wxconfig
