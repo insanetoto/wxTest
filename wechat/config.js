@@ -1,10 +1,8 @@
 'use strict'
 var path = require('path')
-var wechat = require('./wechat/g')
-var util = require('./libs/utils')
-var wechat_file = path.join(__dirname,'./config/wechat.txt')
+var util = require('../libs/utils')
 //配置文件
-var config = require('./config/config');
+var config = require('../config/config');
 
 var wxconfig = {
     wechat:{
