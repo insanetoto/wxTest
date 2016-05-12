@@ -2,7 +2,7 @@
 var path = require('path')
 var util = require('../libs/utils')
 //配置文件
-var config = require('../config/config');
+//var config = require('../config/config');
 
 var wxconfig = {
     wechat:{

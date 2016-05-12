@@ -11,6 +11,6 @@ console.log(config)
 var app = koa();
 
 app.use(wechat(config.wxconfig.wechat , weixin.reply))
-app.listen(config.config.port);
-console.log('listening on port %s',config.port);
+app.listen(80);
+console.log('listening on port 80');
 module.exports = app;
