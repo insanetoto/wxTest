@@ -64,5 +64,5 @@ exports.tpl = function(content, message){
 	info.toUserName = fromUserName
 	info.fromUserName = toUserName
 
-	return tpl.compile(info)
+	return tpl.compiled(info)
 }
