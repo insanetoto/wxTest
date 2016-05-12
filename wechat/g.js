@@ -4,8 +4,8 @@ var Wechat = require('./wechat')
 var getRawBody = require('raw-body')
 var util = require('./util')
 
-module.exports = function(opts){
-    //var wechat = new Wechat(opts)
+module.exports = function(opts, handler){
+    var wechat = new Wechat(opts)
     var that = this
     return  function *(next){        
         var token = opts.token
@@ -38,7 +38,7 @@ module.exports = function(opts){
             var message = util.formatMessage(content.xml)
 
             this.wechat = message
-            yield handler.call(this,next)
+            yield handler.call(this , next)
             wechat.reply.call(this)
 
         }
