@@ -1,8 +1,8 @@
 'use strict'
 
-exports.reply = function *(next){
+exports.reply = function* (next){
 	var message = this.weixin
-
+	console.log(message)
 	if (message.MsgType === 'event'){
 		if(message.Event === 'subscribe'){
 			if (message.EventKey){
