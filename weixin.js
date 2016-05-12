@@ -1,7 +1,7 @@
 'use strict'
 
 exports.reply = function* (next){
-	var message = this.weixin
+	var message = this.wechat
 	console.log(this)
 	if (message.MsgType === 'event'){
 		if(message.Event === 'subscribe'){
