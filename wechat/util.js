@@ -51,8 +51,8 @@ exports.formatMessage = formatMessage
 exports.tpl = function(content, message){
 	var info = {}
 	var type ='text'
-	var fromUserName = message.FromUserName
-	var toUserName = message.ToUserName
+	var fromUserName = message.fromUserName
+	var toUserName = message.toUserName
 
 	if(Array.isArray(content)){
 		type = 'news'
