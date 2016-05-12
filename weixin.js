@@ -8,7 +8,7 @@ exports.reply = function *(next){
 			if (message.EventKey){
 				console.log('扫描二维码:'+ EventKey+' '+ message.ticket)
 			}
-			this.body ="欢迎订阅\r\n"
+			this.body ="欢迎订阅\r\n"+ '消息'
 
 		}
 	}
