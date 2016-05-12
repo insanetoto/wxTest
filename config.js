@@ -1,6 +1,6 @@
 'use strict'
 var path = require('path')
-var util = require('./lib/util')
+var util = require('./lib/utils')
 var wechat_file = path.join(__dirname , './config/wechat_file')
 var wxconfig = {
     wechat:{
