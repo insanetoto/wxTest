@@ -2,7 +2,6 @@
 
 exports.reply = function* (next){
 	var message = this.wechat
-	console.log(this)
 	if (message.MsgType === 'event'){
 		if(message.Event === 'subscribe'){
 			if (message.EventKey){
