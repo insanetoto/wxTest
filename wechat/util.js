@@ -57,7 +57,6 @@ exports.tpl = function(content, message){
 	if(Array.isArray(content)){
 		type = 'news'
 	}
-	console.log(content)
 	type =  content.type || type
 	info.content = content 
 	info.createTime = new Date().getTime()
