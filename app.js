@@ -6,6 +6,7 @@ var wechat_file = path.join(__dirname,'./config/wechat.txt')
 var config = require('./wechat/config')
 var weixin = require('./weixin')
 
+console.log(config)
 
 var app = koa();
 
