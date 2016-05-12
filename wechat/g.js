@@ -37,7 +37,7 @@ module.exports = function(opts, handler){
             var content = yield util.parseXMLAsync(data)
             var message = util.formatMessage(content.xml)
 
-            this.wechat = message
+            this.weixin = message
             yield handler.call(this , next)
             wechat.reply.call(this)
 
