@@ -6,8 +6,6 @@ var wechat_file = path.join(__dirname,'./config/wechat.txt')
 var wxconfig = require('./wechat/config')
 var weixin = require('./weixin')
 
-console.log(wxconfig)
-
 var app = koa();
 
 app.use(wechat(wxconfig.wechat , weixin.reply))
