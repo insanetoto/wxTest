@@ -5,7 +5,7 @@ var getRawBody = require('raw-body')
 var util = require('./util')
 
 module.exports = function(opts){
-    var wechat = new Wechat(opts)
+    //var wechat = new Wechat(opts)
     var that = this
     return  function *(next){        
         var token = opts.token
@@ -37,23 +37,9 @@ module.exports = function(opts){
             var content = yield util.parseXMLAsync(data)
             var message = util.formatMessage(content.xml)
 
-            if(message.MsgType === 'event'){
-                if ( message.Event === 'subscribe'){
-
-                    var now = new Date().getTime()
-                    this.status = 200
-                    this.type = 'application/xml'
-                    this.body =  '<xml>'+
-                                 '<ToUserName><![CDATA['+message.ToUserName+']]></ToUserName>'+
-                                 '<FromUserName><![CDATA['+ message.FromUserName+']]></FromUserName>'+
-                                 '<CreateTime>'+ now +'</CreateTime>'+
-                                 '<MsgType><![CDATA[text]]></MsgType>'+
-                                 '<Content><![CDATA[你好]]></Content>'+
-                                 '</xml>'
-                    console.log(this.body)
-                    return
-                }
-            }
+            this.wechat = message
+            yield handler.call(this,next)
+            wechat.reply.call(this)
 
         }
         
