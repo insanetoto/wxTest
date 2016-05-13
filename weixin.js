@@ -12,12 +12,11 @@ exports.reply = function* (next){
 			this.body ="欢迎订阅\r\n"+ '消息ID:'+ message.MsgId
 			console.log("here ----------------weixin.js  关注 ")
 
+		}else if( message.Event === 'unsubscribe' ){
+			console.log("here ----------------weixin.js  取消关注 ")
+			this.body ='取消关注'	
 		}
 	}
-	else if (message.Event === 'unsubscribe'){
-		console.log('取消关注')
-		this.body ='取消关注'
-
-	}
+	
 	yield next
 }
