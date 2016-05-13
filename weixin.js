@@ -14,7 +14,7 @@ exports.reply = function* (next){
 	}
 	else if (message.Event === 'unsubscribe'){
 		console.log('取消关注')
-		this.body =''
+		this.body ='取消关注'
 
 	}
 	yield next
