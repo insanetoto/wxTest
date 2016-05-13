@@ -34,14 +34,23 @@ exports.reply = function* (next){
 		if(content.indexOf('想你') !== -1){
 			reply ='我也想你，我带你去吃火锅好不？'
 		}
-		else if(content.indexOf('爱你') !== -1){
+		else if(content.indexOf('我爱你') !== -1){
 			reply ='你是我老婆吗，不要随便说爱我，你叫什么名字？'
 		}
 		else if(content.indexOf('黄雯') !== -1){
-			reply ='领导你好，鑫爷说他一会儿过来给你捶捶脚。。'
+			reply ='老婆，我来给你捶捶腿，按按肩膀，亲亲嘴。。'
 		}
 		else if(content.indexOf('张鑫') !== -1){
 			reply ='叫我名字干啥，你是要做饼干跟我吃吗？'
+		}
+		else if(content.indexOf('杀马特') !== -1){
+			reply ='我不是杀马特，我是杀马特他哥'
+		}
+		else if(content.indexOf('饿了') !== -1){
+			reply ='老婆老婆，我去给你炒蛋炒饭'
+		}
+		else if(content.indexOf('做什么') !== -1){
+			reply ='我什么都没有做，只是在想你。'
 		}
 		// else if(content ==='2'){
 
