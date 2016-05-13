@@ -32,13 +32,12 @@ module.exports = function(opts, handler){
                 length:this.length,
                 limit:'1mb',
                 encoding: this.charset
-
             })
             var content = yield util.parseXMLAsync(data)  
             var message = util.formatMessage(content.xml)
             this.weixin = message
             yield handler.call(this , next)
-            wechat.reply.call(this.weixin)
+            wechat.reply.call(this)
 
         }
         
