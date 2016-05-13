@@ -54,10 +54,12 @@ exports.tpl = function(content, message){
 	var fromUserName = message.fromUserName
 	var toUserName = message.toUserName
 
+	console.log("here ----------------exports.tpl")
+
 	if(Array.isArray(content)){
 		type = 'news'
 	}
-	type =  content.type || type
+	//type =  content.type || type
 	info.content = content 
 	info.createTime = new Date().getTime()
 	info.msgType = type
