@@ -37,6 +37,15 @@ exports.reply = function* (next){
 		else if(content.indexOf('想你') !== -1){
 			reply ='我也想你，我带你去吃火锅好不？'
 		}
+		else if(content==='2'){
+
+			reply =[{
+				title : '技术改变世界',
+				description:'只是个描述',
+				picUrl:'http://img6.faloo.com/picture/0x0/0/183/183379.jpg',
+				url:'https://github.com'
+			}]
+		}
 		this.body = reply
 
 	}
