@@ -40,6 +40,7 @@ module.exports = function(opts, handler){
             console.log(message)
             this.weixin = message
             yield handler.call(this , next)
+            console.log(this.body)
             wechat.reply.call(this)
 
         }
