@@ -27,10 +27,10 @@ var tpl = heredoc(function(){/*
 	</Video>
 <% } else if (msgType === 'music') {%>
 	<Music>
-		<Title><![CDATA[<%= content.TITLE%>]]></Title>
-		<Description><![CDATA[<%= content.DESCRIPTION %>]]></Description>
-		<MusicUrl><![CDATA[<%= content.MUSIC_Url %>]]></MusicUrl>
-		<HQMusicUrl><![CDATA[<%= content.HQ_MUSIC_Url %>]]></HQMusicUrl>
+		<Title><![CDATA[<%= content.title%>]]></Title>
+		<Description><![CDATA[<%= content.description %>]]></Description>
+		<MusicUrl><![CDATA[<%= content.musicUrl %>]]></MusicUrl>
+		<HQMusicUrl><![CDATA[<%= content.hqMusicUrl %>]]></HQMusicUrl>
 		<ThumbMediaId><![CDATA[<%= content.media_id %> ]]></ThumbMediaId>
 	</Music>
 <% } else if (msgType === 'news') {%>
@@ -40,7 +40,7 @@ var tpl = heredoc(function(){/*
 	<item>
 	<Title><![CDATA[<%= item.title %>]]></Title> 
 	<Description><![CDATA[<%= item.description %>]]></Description>
-	<PicUrl><![CDATA[<%= item.picurl %>]]></PicUrl>
+	<PicUrl><![CDATA[<%= item.picUrl %>]]></PicUrl>
 	<Url><![CDATA[<%= item.url %> ]]></Url>
 	</item>
 	<% })%>
