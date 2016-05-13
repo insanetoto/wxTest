@@ -8,7 +8,7 @@ exports.reply = function* (next){
 			if (message.EventKey){
 				console.log('扫描二维码:'+ EventKey+' '+ message.ticket)
 			}
-			this.body ="欢迎订阅"
+			this.body ="欢迎订阅,这里是鑫爷和你谈情的地方"
 
 		}
 		else if( message.Event === 'unsubscribe' ){
@@ -33,6 +33,9 @@ exports.reply = function* (next){
 		var reply ="额，你说的" +message.Content +' 太复杂了！'
 		if(content === '1'){
 			reply = '吃屁'
+		}
+		else if(stringObject.indexOf('想你',content) !== -1){
+			reply ='我也想你，我带你去吃火锅好不？'
 		}
 		this.body = reply
 
