@@ -39,7 +39,6 @@ module.exports = function(opts, handler){
             yield handler.call(this , next)
             console.log(this)
             wechat.reply.call(this)
-
         }
         
     }
