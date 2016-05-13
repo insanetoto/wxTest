@@ -33,7 +33,6 @@ module.exports = function(opts, handler){
                 limit:'1mb',
                 encoding: this.charset
             })
-            console.log(this.body)
             var content = yield util.parseXMLAsync(data)  
             var message = util.formatMessage(content.xml)
             this.weixin = message
