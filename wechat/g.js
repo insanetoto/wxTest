@@ -34,14 +34,11 @@ module.exports = function(opts, handler){
                 encoding: this.charset
 
             })
-            var content = yield util.parseXMLAsync(data)
-            console.log(content)
+            var content = yield util.parseXMLAsync(data)  
             var message = util.formatMessage(content.xml)
-            console.log(message)
             this.weixin = message
             yield handler.call(this , next)
-            console.log(this.body)
-            wechat.reply.call(this)
+            wechat.reply.call(this.weixin)
 
         }
         
