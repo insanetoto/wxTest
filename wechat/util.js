@@ -53,9 +53,6 @@ exports.tpl = function(content, message){
 	var type ='text'
 	var fromUserName = message.FromUserName
 	var toUserName = message.ToUserName
-
-	console.log(message.fromUserName +'  ---   message.fromUserName')
-	console.log(message.fromUserName +'  ---   message.toUserName')
 	if(Array.isArray(content)){
 		type = 'news'
 	}
@@ -65,8 +62,5 @@ exports.tpl = function(content, message){
 	info.msgType = type
 	info.toUserName = fromUserName
 	info.fromUserName = toUserName
-
-	console.log(info.fromUserName +'  ---   info.fromUserName')
-	console.log(info.fromUserName +'  ---   info.toUserName')
 	return tpl.compiled(info)
 }
