@@ -8,7 +8,7 @@ exports.reply = function* (next){
 			if (message.EventKey){
 				console.log('扫描二维码:'+ EventKey+' '+ message.ticket)
 			}
-			this.body ="欢迎订阅,这里是鑫爷和你谈情的地方"
+			this.body ="欢迎订阅,这里是鑫爷和你说话的地方"
 
 		}
 		else if( message.Event === 'unsubscribe' ){
@@ -30,22 +30,25 @@ exports.reply = function* (next){
 	}
 	else if(message.MsgType === 'text'){
 		var content = message.Content
-		var reply ="额，你说的" +message.Content +' 太复杂了！'
-		if(content === '1'){
-			reply = '吃屁'
-		}
-		else if(content.indexOf('想你') !== -1){
+		var reply ='我是个鑫爷忙工作时帮他自动回复的小机器人，撩妹技能不高，不要调戏我。。'
+		if(content.indexOf('想你') !== -1){
 			reply ='我也想你，我带你去吃火锅好不？'
 		}
-		else if(content ==='2'){
-
-			reply =[{
-				title : '技术改变世界',
-				description:'只是个描述',
-				picUrl:'http://img6.faloo.com/picture/0x0/0/183/183379.jpg',
-				url:'https://github.com'
-			}]
+		else if(content.indexOf('爱你') !== -1){
+			reply ='你是我老婆吗，不要随便说爱我，你叫什么名字？'
 		}
+		else if(content.indexOf('黄雯') !== -1){
+			reply ='领导你好，鑫爷说他一会儿过来给你捶捶脚。。'
+		}
+		// else if(content ==='2'){
+
+		// 	reply =[{
+		// 		title : '技术改变世界',
+		// 		description:'只是个描述',
+		// 		picUrl:'http://img6.faloo.com/picture/0x0/0/183/183379.jpg',
+		// 		url:'https://github.com'
+		// 	}]
+		// }
 		this.body = reply
 
 	}
