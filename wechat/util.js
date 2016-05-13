@@ -49,6 +49,7 @@ function formatMessage(result){
 
 exports.formatMessage = formatMessage
 exports.tpl = function(content, message){
+	console.log(content)
 	var info = {}
 	var type ='text'
 	var fromUserName = message.fromUserName
