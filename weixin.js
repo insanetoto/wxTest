@@ -40,6 +40,9 @@ exports.reply = function* (next){
 		else if(content.indexOf('黄雯') !== -1){
 			reply ='领导你好，鑫爷说他一会儿过来给你捶捶脚。。'
 		}
+		else if(content.indexOf('张鑫') !== -1){
+			reply ='叫我名字干啥，你是要做饼干跟我吃吗？'
+		}
 		// else if(content ==='2'){
 
 		// 	reply =[{
