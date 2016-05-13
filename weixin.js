@@ -34,7 +34,7 @@ exports.reply = function* (next){
 		if(content === '1'){
 			reply = '吃屁'
 		}
-		else if(stringObject.indexOf('想你',content) !== -1){
+		else if(content.indexOf('想你') !== -1){
 			reply ='我也想你，我带你去吃火锅好不？'
 		}
 		this.body = reply
