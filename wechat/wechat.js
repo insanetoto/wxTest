@@ -77,9 +77,9 @@ Wechat.prototype.updateAccessToken = function(){
 Wechat.prototype.reply = function(){
     var content =  this.body
     var message = this.weixin
-    console.log("here ----------------util.tpl(content, message)")
     var xml = util.tpl(content, message)
 
+    console.log(xml)
     this.status = 200
     this.tpye = 'application/xml'
     this.body = xml
