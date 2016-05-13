@@ -51,8 +51,8 @@ exports.formatMessage = formatMessage
 exports.tpl = function(content, message){
 	var info = {}
 	var type ='text'
-	var fromUserName = message.fromUserName
-	var toUserName = message.toUserName
+	var fromUserName = message.FromUserName
+	var toUserName = message.ToUserName
 
 	console.log(message.fromUserName +'  ---   message.fromUserName')
 	console.log(message.fromUserName +'  ---   message.toUserName')
