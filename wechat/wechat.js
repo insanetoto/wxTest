@@ -19,9 +19,12 @@ function Wechat(opts){
     this.getAccessToken = opts.getAccessToken
     this.saveAccessToken = opts.saveAccessToken
     this.fetchAccessToken()
+    console.log(this)
+
 }
 
 Wechat.prototype.fetchAccessToken = function(data){
+    console.log(this)
     var that = this
     if (this.access_token && this.expires_in){
         if (this.isValidAccessToken(this)){
@@ -48,9 +51,6 @@ Wechat.prototype.fetchAccessToken = function(data){
             that.access_token = data.access_token
             that.expires_in = data.expires_in
             that.saveAccessToken(data)
-            console.log('=============获取access token======================' )
-            console.log(data)
-            console.log('=============获取access token======================' )
             return  Promise.resolve(data)
         })
 }
@@ -85,7 +85,6 @@ Wechat.prototype.updateAccessToken = function(){
         var expires_in = now + (data.expires_in - 20) *1000
 
         data.expires_in = expires_in
-        console.log("updateAccessToken data " + data)
         resolve(data)
        })
 
