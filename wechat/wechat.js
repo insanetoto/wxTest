@@ -32,6 +32,10 @@ Wechat.prototype.fetchAccessToken = function(data){
         .then(function(data){
             try{
                 data = JSON.parse(data)
+                console.log('=========getAccessToken==========')
+                console.log('data access_token:'+data.access_token)
+                console.log('data expires_in:'+data.expires_in)
+                console.log('=========================')
             }
             catch(e){
                 return that.updateAccessToken()
@@ -82,8 +86,8 @@ Wechat.prototype.updateAccessToken = function(){
         var expires_in = now + (data.expires_in - 20) *1000
         data.expires_in = expires_in
         console.log('=========================')
-        console.log('data:'+data.access_token)
-        console.log('data:'+data.expires_in)
+        console.log('data access_token:'+data.access_token)
+        console.log('data expires_in:'+data.expires_in)
         console.log('=========================')
         resolve(data)
        })
