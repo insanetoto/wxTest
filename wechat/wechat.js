@@ -118,11 +118,13 @@ Wechat.prototype.uploadMaterial = function(type,filepath){
             .then(function(response){
                 var _data = response.body
                 if(_data){
+                    console.log(_data)
                     resolve(_data)
                 }
                 else{
                     throw new Error('upload file error')
                 }
+
             })
             .catch(function(err){
                 reject(err)
