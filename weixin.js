@@ -1,5 +1,9 @@
 'use strict'
 
+var config = require(./config)
+var Wechat = require(./wechat/wechat)
+var wechatApi = new Wechat(config.wechat)
+
 exports.reply = function* (next){
 	var message = this.weixin
 
@@ -52,6 +56,14 @@ exports.reply = function* (next){
 		else if(content.indexOf('做什么') !== -1){
 			reply ='我什么都没有做，只是在想你。'
 		}
+		else if(content.indexOf('想你') !== -1){
+			var data = yield wechatApi.uploadMaterial('image', __dirname + 'darling.jpg')
+			reply = {
+				type : 'image',
+				mediaId: data.media_id
+			}
+		}
+
 		// else if(content ==='2'){
 
 		// 	reply =[{
