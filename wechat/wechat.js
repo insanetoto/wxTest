@@ -32,9 +32,6 @@ Wechat.prototype.fetchAccessToken = function(data){
         .then(function(data){
             try{
                 data = JSON.parse(data)
-                console.log('===================================')
-                console.log(data)
-                console.log('===================================')
             }
             catch(e){
                 return that.updateAccessToken()
@@ -57,9 +54,11 @@ Wechat.prototype.fetchAccessToken = function(data){
 
 Wechat.prototype.isValidAccessToken = function(data){
     if ( !data || !data.access_token||data.expires_in){
+        console.log("return false here ")
         return false
     }
 
+    console.log('not return false here   valid')
     var access_token = data.access_token
     var expires_in = data.expires_in
     var now = (new Date().getTime())
@@ -73,10 +72,14 @@ Wechat.prototype.isValidAccessToken = function(data){
 
 
 Wechat.prototype.updateAccessToken = function(){
-   var appId = this.appId
-   var appSecret = this.appSecret
+    var appId = this.appId
+    var appSecret = this.appSecret
 
-   var url = api.accessToken +'appid='+appId+'&secret='+appSecret
+    var url = api.accessToken +'appid='+appId+'&secret='+appSecret
+
+    console.log('===================================')
+    console.log('url:'+url)
+    console.log('===================================')
 
    return new Promise(function(resolve,reject){
     request({url: url,json:true}).then(function(response){
@@ -85,6 +88,9 @@ Wechat.prototype.updateAccessToken = function(){
         var expires_in = now + (data.expires_in - 20) *1000
 
         data.expires_in = expires_in
+        console.log('===================================')
+        console.log('data:'+data)
+        console.log('===================================')
         resolve(data)
        })
 
