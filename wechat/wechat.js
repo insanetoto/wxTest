@@ -103,9 +103,7 @@ Wechat.prototype.reply = function(){
 Wechat.prototype.uploadMaterial = function(type,filepath){
     var that = this
     var form = {
-        meida : fs.createReadStream(filepath){
-
-        }
+        meida : fs.createReadStream(filepath)
     }
    var appId = this.appId
    var appSecret = this.appSecret
