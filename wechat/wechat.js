@@ -30,11 +30,11 @@ Wechat.prototype.fetchAccessToken = function(data){
     }
     return this.getAccessToken()
         .then(function(data){
-            console.log('===================================')
-            console.log(data)
-            console.log('===================================')
             try{
                 data = JSON.parse(data)
+                console.log('===================================')
+                console.log(data)
+                console.log('===================================')
             }
             catch(e){
                 return that.updateAccessToken()
