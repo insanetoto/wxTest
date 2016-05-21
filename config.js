@@ -12,6 +12,10 @@ var wxconfig = {
             },
         saveAccessToken:function(data){
                 data =JSON.stringify(data)
+                console.log('=========================')
+                console.log('data:'+data.access_token)
+                console.log('data:'+data.expires_in)
+                console.log('=========================')
                 return util.writeFileAsync(wechat_file ,data)
             }
         }
