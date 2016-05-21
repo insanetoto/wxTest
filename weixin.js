@@ -56,7 +56,7 @@ exports.reply = function* (next){
 			reply ='我什么都没有做，只是在想你。'
 		}
 		else if(content.indexOf('图片') !== -1){
-			var data = yield wechatApi.uploadMaterial('image', __dirname + 'darling.jpg')
+			var data = yield wechatApi.uploadMaterial('image', __dirname + '/darling.jpg')
 			reply = {
 				type : 'image',
 				mediaId: data.media_id
