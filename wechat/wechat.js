@@ -21,6 +21,7 @@ function Wechat(opts){
     this.fetchAccessToken()
     
 }
+
 Wechat.prototype.fetchAccessToken = function(data){
     var that = this
     if (this.access_token && this.expires_in){
@@ -28,7 +29,7 @@ Wechat.prototype.fetchAccessToken = function(data){
             return Promise.resolve(this)
         }
     }
-    this.getAccessToken()
+    return this.getAccessToken()
         .then(function(data){
             try{
                 data = JSON.parse(data)
@@ -113,7 +114,7 @@ Wechat.prototype.uploadMaterial = function(type,filepath){
    console.log(this)
    console.log('-----------------------------------')
    return new Promise(function(resolve,reject){
-    this
+    that
         .fetchAccessToken()
         .then(function(data){
             var url = api.upload +'&access_token='+data.access_token+'&type='+type
