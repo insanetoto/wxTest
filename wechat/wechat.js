@@ -19,12 +19,9 @@ function Wechat(opts){
     this.getAccessToken = opts.getAccessToken
     this.saveAccessToken = opts.saveAccessToken
     this.fetchAccessToken()
-    console.log(this)
-
 }
 
 Wechat.prototype.fetchAccessToken = function(data){
-    console.log(this)
     var that = this
     if (this.access_token && this.expires_in){
         if (this.isValidAccessToken(this)){
@@ -33,6 +30,9 @@ Wechat.prototype.fetchAccessToken = function(data){
     }
     return this.getAccessToken()
         .then(function(data){
+            console.log('===================================')
+            console.log(data)
+            console.log('===================================')
             try{
                 data = JSON.parse(data)
             }
