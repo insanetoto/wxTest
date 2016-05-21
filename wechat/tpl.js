@@ -13,15 +13,15 @@ var tpl = heredoc(function(){/*
 	<Content><![CDATA[<%= content %>]]></Content>
 <% } else if (msgType === 'image') {%>
 	<Image>
-		<MediaId><![CDATA[ <% content.mediaId %>]]></MediaId>
+		<MediaId><![CDATA[ <% content.MediaId %>]]></MediaId>
 	</Image>
 <% } else if (msgType === 'voice') {%>
 	<Voice>
-		<MediaId><![CDATA[ <% content.mediaId %>]]></MediaId>
+		<MediaId><![CDATA[ <% content.MediaId %>]]></MediaId>
 	</Voice>
 <% } else if (msgType === 'vedio') {%>
 	<Video>
-		<MediaId><![CDATA[<%= content.mediaId %>]]></MediaId>
+		<MediaId><![CDATA[<%= content.MediaId %>]]></MediaId>
 		<Title><![CDATA[ <% content.title %>]]></Title>
 		<Description><![CDATA[<%= content.description %>]]></Description>
 	</Video>

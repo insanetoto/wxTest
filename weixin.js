@@ -59,7 +59,7 @@ exports.reply = function* (next){
 			var data = yield wechatApi.uploadMaterial('image', __dirname + '/darling.jpg')
 			reply = {
 				type : 'image',
-				mediaId: data.media_id
+				MediaId: data.MediaId
 			}
 		}
 

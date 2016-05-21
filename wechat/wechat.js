@@ -108,11 +108,7 @@ Wechat.prototype.uploadMaterial = function(type,filepath){
     }
    var appId = this.appId
    var appSecret = this.appSecret
-   console.log('-----------------------------------')
-   console.log(that)
-   console.log('-----------------------------------')
-   console.log(this)
-   console.log('-----------------------------------')
+   
    return new Promise(function(resolve,reject){
     that
         .fetchAccessToken()
