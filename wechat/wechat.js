@@ -96,6 +96,7 @@ Wechat.prototype.reply = function(){
     var xml = util.tpl(content, message)
 
     console.log(xml)
+    console.log(content)
     this.status = 200
     this.tpye = 'application/xml'
     this.body = xml
@@ -114,6 +115,7 @@ Wechat.prototype.uploadMaterial = function(type,filepath){
         .fetchAccessToken()
         .then(function(data){
             var url = api.upload +'&access_token='+data.access_token+'&type='+type
+            console.log(url)
             request({method:'POST',url: url, formData:form, json:true})
             .then(function(response){
                 var _data = response.body
