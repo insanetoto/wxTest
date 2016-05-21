@@ -45,17 +45,8 @@ Wechat.prototype.fetchAccessToken = function(data){
             }
         })
         .then(function(data){
-            console.log('=========================')
-            console.log('data:'+data.access_token)
-            console.log('data:'+data.expires_in)
-            
             that.access_token = data.access_token
             that.expires_in = data.expires_in
-
-            console.log('=========================')
-            console.log('that:'+that.access_token)
-            console.log('that:'+that.expires_in)
-            console.log('=========================')
             that.saveAccessToken(data)
             return  Promise.resolve(data)
         })
@@ -90,6 +81,10 @@ Wechat.prototype.updateAccessToken = function(){
         var now = (new Date().getTime())
         var expires_in = now + (data.expires_in - 20) *1000
         data.expires_in = expires_in
+        console.log('=========================')
+        console.log('data:'+data.access_token)
+        console.log('data:'+data.expires_in)
+        console.log('=========================')
         resolve(data)
        })
 
