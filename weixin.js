@@ -1,7 +1,7 @@
 'use strict'
 
-var config = require(./config)
-var Wechat = require(./wechat/wechat)
+var config = require('./config')
+var Wechat = require('./wechat/wechat')
 var wechatApi = new Wechat(config.wechat)
 
 exports.reply = function* (next){
