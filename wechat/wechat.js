@@ -26,22 +26,27 @@ Wechat.prototype.fetchAccessToken = function(data){
     var that = this
     if (this.access_token && this.expires_in){
         if (this.isValidAccessToken(this)){
+            console.log('access_token  正常，不需要重新获取 直接返回 ' )
             return Promise.resolve(this)
         }
     }
     return this.getAccessToken()
         .then(function(data){
+            console.log('JSON.parse(data) 开始获取 access_token ' )
             try{
                 data = JSON.parse(data)
             }
             catch(e){
+                console.log('updateAccessToken() 获取 access_token  正常 ' )
                 return that.updateAccessToken()
             }
 
             if (that.isValidAccessToken(data)){
+                console.log(' Promise.resolve(data)获取 access_token  正常 ' )
                 return Promise.resolve(data)
             }
             else {
+                console.log('updateAccessToken() 2 获取 access_token  正常 ' )
                 return that.updateAccessToken()
             }
         })
@@ -49,6 +54,7 @@ Wechat.prototype.fetchAccessToken = function(data){
             that.access_token = data.access_token
             that.expires_in = data.expires_in
             that.saveAccessToken(data)
+            console.log('saveAccessToken(data) 获取 access_token  正常 ' )
 
             return  Promise.resolve(data)
         })
