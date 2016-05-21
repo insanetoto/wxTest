@@ -123,13 +123,10 @@ Wechat.prototype.uploadMaterial = function(type,filepath){
                     throw new Error('upload file error')
                 }
             })
-        .catch(function(err){
-            reject(err)
+            .catch(function(err){
+                reject(err)
             })
         })
     }) 
 }
-
-
-
 module.exports = Wechat
