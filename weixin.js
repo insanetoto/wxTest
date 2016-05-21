@@ -1,5 +1,4 @@
 'use strict'
-
 var config = require('./config')
 var Wechat = require('./wechat/wechat')
 var wechatApi = new Wechat(config.wechat)
