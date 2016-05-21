@@ -25,7 +25,6 @@ Wechat.prototype.fetchAccessToken = function(data){
     var that = this
     if (this.access_token && this.expires_in){
         if (this.isValidAccessToken(this)){
-           
             return Promise.resolve(this)
         }
     }
@@ -86,6 +85,7 @@ Wechat.prototype.updateAccessToken = function(){
         var expires_in = now + (data.expires_in - 20) *1000
 
         data.expires_in = expires_in
+        console.log("updateAccessToken data " + data)
         resolve(data)
        })
 
