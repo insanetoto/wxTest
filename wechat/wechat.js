@@ -46,9 +46,9 @@ Wechat.prototype.fetchAccessToken = function(data){
         })
         .then(function(data){
             console.log('=========================')
-            console.log('data:'+data)
+            console.log('data:'+data.toString())
             console.log('=========================')
-            console.log('that:'+that)
+            console.log('that:'+that.toString())
             console.log('=========================')
             that.access_token = data.access_token
             that.expires_in = data.expires_in
@@ -59,11 +59,9 @@ Wechat.prototype.fetchAccessToken = function(data){
 
 Wechat.prototype.isValidAccessToken = function(data){
     if ( !data || !data.access_token||data.expires_in){
-        console.log("return false here ")
         return false
     }
 
-    console.log('not return false here   valid')
     var access_token = data.access_token
     var expires_in = data.expires_in
     var now = (new Date().getTime())
