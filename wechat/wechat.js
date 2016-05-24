@@ -32,10 +32,6 @@ Wechat.prototype.fetchAccessToken = function(data){
         .then(function(data){
             try{
                 data = JSON.parse(data)
-                console.log('=========getAccessToken==========')
-                console.log('data access_token:'+data.access_token)
-                console.log('data expires_in:'+data.expires_in)
-                console.log('=========================')
             }
             catch(e){
                 return that.updateAccessToken()
@@ -116,12 +112,10 @@ Wechat.prototype.uploadMaterial = function(type,filepath){
         .fetchAccessToken()
         .then(function(data){
             var url = api.upload +'&access_token='+data.access_token+'&type='+type
-            console.log(url)
             request({method:'POST',url: url, formData:form, json:true})
             .then(function(response){
                 var _data = response.body
                 if(_data){
-                    console.log(_data)
                     resolve(_data)
                 }
                 else{

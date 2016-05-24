@@ -57,6 +57,7 @@ exports.reply = function* (next){
 		}
 		else if(content.indexOf('图片') !== -1){
 			var data = yield wechatApi.uploadMaterial('image', __dirname + '/darling.jpg')
+			console.log(data)
 			reply = {
 				type : 'image',
 				MediaId: data.MediaId
